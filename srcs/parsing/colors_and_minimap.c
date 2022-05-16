@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_minimap_textures.c                             :+:      :+:    :+:   */
+/*   colors_and_minimap.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:06:58 by lnelson           #+#    #+#             */
-/*   Updated: 2022/05/10 17:14:17 by lnelson          ###   ########.fr       */
+/*   Updated: 2022/05/16 16:04:53 by amyroshn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ int	is_correct_number(char *s, int *i)
 	}
 	return (s[*i] == ',' || !s[*i]);
 }
-#include <stdio.h>
+
 int	is_correct_color_pattern(char *s)
 {
 	int	i;
 	int	nb_count;
-	
+
 	i = 1;
 	nb_count = 0;
 	while (s[i])
