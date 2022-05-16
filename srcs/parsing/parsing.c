@@ -77,7 +77,7 @@ int	add_colors(t_data *data, char *temp)
 	i = 0;
 	while (ft_isdigit(temp[i]) == 0 && temp[i])
 		i++;
-	if (temp[i] == 0)
+	if (temp[i] == 0 || !is_correct_color_pattern(temp))
 		return (0);
 	if (temp[0] == 'F')
 		tmp = (unsigned char *)(&(data->img.floor_color));
@@ -97,15 +97,15 @@ int	add_colors(t_data *data, char *temp)
 
 void	parsing_helper(t_data *data, char *temp, int *ret, char *map_start)
 {
-	if (temp[0] == 'N' && temp[1] == 'O')
+	if (temp[0] == 'N' && temp[1] == 'O' && temp[2] == ' ')
 		*ret = add_north_texture(data, temp);
-	else if (temp[0] == 'S' && temp[1] == 'O')
+	else if (temp[0] == 'S' && temp[1] == 'O' && temp[2] == ' ')
 		*ret = add_south_texture(data, temp);
-	else if (temp[0] == 'E' && temp[1] == 'A')
+	else if (temp[0] == 'E' && temp[1] == 'A' && temp[2] == ' ')
 		*ret = add_east_texture(data, temp);
-	else if (temp[0] == 'W' && temp[1] == 'E')
+	else if (temp[0] == 'W' && temp[1] == 'E' && temp[2] == ' ')
 		*ret = add_west_texture(data, temp);
-	else if (temp[0] == 'F' || temp[0] == 'C')
+	else if ((temp[0] == 'F' || temp[0] == 'C') && temp[1] == ' ')
 		*ret = add_colors(data, temp);
 	else if (*map_start == 0)
 	{

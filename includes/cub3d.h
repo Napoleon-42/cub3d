@@ -158,6 +158,7 @@ void	parsing(t_data *data, int fd);
 char	texture_addr_setter(t_data *data);
 void	to_next_nbr(int *index, char *str);
 char	check_player_count(char **s);
+int		is_correct_color_pattern(char *s);
 
 /*	MAP_PROCESSING		*/
 
